@@ -1,0 +1,176 @@
+﻿﻿<extend name="forum_common" />
+<block name="bbscontent">
+
+
+	<!--主题-->
+	<div class="c_banner"></div>
+	<!--你问我答-->
+
+
+
+	<section class="c_que_ans">
+		<div class="c_que_right">
+		<div class="w1200 c_que">
+			<div class="ca_head">
+				<h2>你问我答</h2>
+				<i></i>
+				<p>Ask and answer</p>
+				<a class="c_issue" href="{{:url('forum/interpub')}}?id={{$Think.session.userid}}">发布问题</a>
+			</div>
+			<div class="clearfix " >
+				<div class="c_inf_right pr">
+					<div class="c_u_hd">
+						<img alt="" src="/public/index/img/u_pic_1.png" />
+						<p class="c_u_name">Cherish</p>
+						<p class="c_u_subNme">2017-09-29</p>
+						<h2>哪部影视作品的哪一幕让你直接泪崩了？</h2>
+					</div>
+					<div class="clearfix tit">
+						<span>ANSWER:</span>
+						<a><span class="more">MORE>></span></a>
+					</div>
+					<div class="c_answer_li">
+						<div class="c_a_item">
+							<div class="c_u_hd">
+								<img alt="" src="/public/index/img/u_pic_1.png" />
+								<p class="c_u_name">Cherish</p>
+								<p class="c_u_subNme">2017-09-29</p>
+								<a class="follow" onclick="attention()">+关注</a>
+							</div>
+							<p class="c_inf">《小鞋子》妹妹的鞋子拿去补，让哥哥不小心弄丢了，家里妈妈生病，没钱买新鞋。因为怕被爸爸打，所以也不敢告诉爸妈。。。</p>
+						</div>
+						<div class="c_a_item">
+							<div class="c_u_hd">
+								<img alt="" src="/public/index/img/u_pic_1.png" />
+								<p class="c_u_name">Cherish</p>
+								<p class="c_u_subNme">2017-09-29</p>
+								<a class="follow" onclick="attention()">+关注</a>
+							</div>
+							<p class="c_inf">《小鞋子》妹妹的鞋子拿去补，让哥哥不小心弄丢了，家里妈妈生病，没钱买新鞋。因为怕被爸爸打，所以也不敢告诉爸妈。。。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<!--神吐槽-->
+	<section class="c_que_ans">
+		<div class="c_que_left">
+		<div class=" c_que">
+			<div class="ca_head pr">
+				<h2>神吐槽</h2>
+				<i></i>
+				<p>God Tucao</p>
+				<a class="go_Tucao" href="{{:url('forum/talk')}}?id={{$Think.session.userid}}">来吐槽</a>
+			</div>
+			<div class="clearfix c_topline" >
+				<div class="c_top_talk">
+					<div class="c_u_hd c_u_hleft">
+						<img alt="" src="/public/index/img/interlocution/c_item_1.gif" />
+						<p class="c_u_name">jacky</p>
+						<p class="c_u_subNme">2017-09-29</p>
+						<h2>如何评价马云以及他的电影《功守道》？</h2>
+					</div>
+					<div class="clearfix tit">
+						<span>ANSWER:</span>
+						<a><span class="more">MORE>></span></a>
+					</div>
+					<div class="c_answer_li c_answer_talk">
+						<div class="c_a_item">
+							<div class="c_u_hd">
+								<img alt="" src="/public/index/img/interlocution/c_item_2.gif" />
+								<p class="c_u_name">BlingBling于</p>
+								<div class="u_info">
+									<span>制片人 / 北京 </span>
+									<span class="fanNumber">粉丝 323</span>|<span class="attentionNumber">关注 9</span>
+								</div>
+								<i class="triangle"></i>
+								<a class="follow" onclick="attention()">+关注</a>
+							</div>
+							<p class="c_inf">当职业选手遇到的人民币玩家，你会发现，你多年修为积淀下来的行为流水的操作，终于为你赢得了一个被马爸爸一脚踹飞的机会。。。
+							</p>
+						</div>
+						<div class="c_a_item">
+							<div class="c_u_hd">
+								<img alt="" src="/public/index/img/interlocution/c_item_3.gif" />
+								<p class="c_u_name">BlingBling于</p>
+								<div class="u_info">
+									<span>制片人 / 北京 </span>
+									<span>粉丝 323</span>|<span>关注 9</span>
+								</div>
+								<i class="triangle"></i>
+								<a class="follow" onclick="attention()">+关注</a>
+							</div>
+							<p class="c_inf">甄子丹说泡脚用的药那叫川芎（xiōng），不叫川gōng。听到穿宫真是一脸尴尬。整个一个剧组没有认识</p>
+						</div>
+						<div class="c_a_item">
+							<div class="c_u_hd">
+								<img alt="" src="/public/index/img/interlocution/c_item_4.gif" />
+								<p class="c_u_name">BlingBling于</p>
+								<div class="u_info">
+									<span>制片人 / 北京 </span>
+									<span>粉丝 323</span>|<span>关注 9</span>
+								</div>
+								<i class="triangle"></i>
+								<a class="follow" onclick="attention()">+关注</a>
+							</div>
+							<p class="c_inf">我是谁？马云马师傅。天下武学不如我八字真言。</p>
+						</div>
+						<div class="c_a_item">
+							<div class="c_u_hd">
+								<img alt="" src="/public/index/img/interlocution/c_item_5.gif" />
+								<p class="c_u_name">BlingBling于</p>
+								<div class="u_info">
+									<span>制片人 / 北京 </span>
+									<span>粉丝 323</span>|<span>关注 9</span>
+								</div>
+								<i class="triangle"></i>
+								<a class="follow" onclick="attention()">+关注</a>
+							</div>
+							<p class="c_inf">其实我本来觉得再过分能过分到哪里去？一看预告片，真的，服了。再也不敢质疑神拳之功力。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<script>
+        function attention(){
+            $.ajax({
+                url:'attention',
+                data:{uid:uid},
+                dataType:'json',
+                type:'POST',
+                success:function(data){
+                    if(data.code == 200){
+                        layer.msg('关注成功', {icon: 1, time: 1000});
+                    }else{
+                        //layer.
+                        layer.msg('关注失败', {icon: 1, time: 1000});
+                    }
+                }
+            });
+        }
+			$.ajax({
+				url:'',
+				data:{
+				    fanNumber:fanNumber,
+					attentionNumber:attentionNumber
+				},
+				dataType:'json',
+				type:'GET',
+				success:function (data) {
+                    if(data.code == 200){
+                        $('.fanNumber').text(data.msg);
+                        console.log(data.msg);
+                    }else{
+                        //layer.
+                    }
+                }
+			})
+
+	</script>
+</block>

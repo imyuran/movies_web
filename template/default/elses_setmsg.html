@@ -1,0 +1,61 @@
+<extend name="forum_common" />
+<block name="bbscontent">
+	<div class="w1200">
+		<div class="user_msg_pl">
+			
+			<div class="user_msg_pl_right">
+				
+			</div>
+		</div>
+		<div class="user_msg_form">
+			<form action="{{:url('elses/setmsg')}}" method="post">
+				<textarea name="msg"></textarea>
+				<input type="hidden" name="userid" value="{{$Think.session.userid}}">
+				<input type="submit" value="发送" class="user_msg_form_sub" name="msg_btn"/>
+			</form>
+			
+		</div>
+		<div class="user_msg_content">
+			<ul class="user_msg_content_ul">
+			<foreach name="content" item="val">
+				<?php if($val['sender_id'] == $s_userid||$val['accept_id'] == $a_userid){ ?>	
+				<li class="user_msg_content_li">
+					<div class="user_msg_content_img">
+						<img src="{{$val.s_userhead}}" />
+					</div>
+
+					<div class="user_msg_content_msg">
+						<div><span class="user_msg_content_msg_1">{{$val.s_username}}</span>
+							<span class="user_msg_content_msg_2">{{$val.year}}年{{$val.month}}月{{$val.day}}日&nbsp;&nbsp;{{$val.hour}}</span>
+						</div>
+						<div class="user_msg_content_msg_3">
+							{{$val.content}}
+						</div>
+					</div>
+
+				</li>
+			<?php }?>  
+			<?php if($val['sender_id'] == $a_userid||$val['accept_id'] == $s_userid){ ?>
+				<li class="user_msg_content_li_my">
+					
+					<div class="user_msg_content_msg_my">
+						<div><span class="user_msg_content_msg_1">{{$val.a_username}}</span>
+							<span class="user_msg_content_msg_2">{{$val.year}}年{{$val.month}}月{{$val.day}}日&nbsp;&nbsp;{{$val.hour}}</span>
+						</div>
+						<div class="user_msg_content_msg_my_3">
+							{{$val.content}}
+						</div>
+					</div>
+					<div class="user_msg_content_img_my">
+						<img src="{{$val.a_userhead}}" />
+					</div>
+				</li>
+			<?php } ?>	
+			</foreach>	
+			</ul>
+			<div class="user_msg_page">
+				<!-- <span class="msg_on">1</span><span>2</span><span>3</span><span>></span> -->
+			</div>
+		</div>
+	</div>
+</block>

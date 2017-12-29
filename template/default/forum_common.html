@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>个人中心-文章页</title>
+	<meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="__PC__/css/layui.css"  media="all">
+  <link rel="stylesheet" href="__PC__/css/base.css"  media="all">
+  <link rel="stylesheet" href="__PC__/css/index.css"  media="all">
+
+<link rel="stylesheet" type="text/css" href="/public/index/css/common/base.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/foot.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/header.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/page/interlocution_index.css">
+
+
+	<link href="__PC__/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__PC__/umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" src="__PC__/umeditor/third-party/template.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PC__/umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PC__/umeditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="__PC__/umeditor/lang/zh-cn/zh-cn.js"></script>
+
+  
+
+    <link rel="stylesheet" type="text/css" href="/public/index/css/common/base.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/foot.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/header.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/page/personal_center.css">
+
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/base.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/foot.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/header.css">
+	<!-- <link rel="stylesheet" type="text/css" href="themes/default/default.css"  /> -->
+	<link rel="stylesheet" type="text/css" href="/public/index/css/page/interlocution_publish.css">
+	<!-- <script src="js/kindeditor-min.js"></script> -->
+
+
+
+
+</head>
+<body style="background-color: #fff;">
+	<header class="interlocution">
+		<div class="w1200 head_cont">
+			<img src="/public/index/img/logo.png">
+			<empty name="Think.session.phone">
+			<ul class="hd_nav">
+				<li>
+					<a href="{{:url('reg/login')}}">
+						<h2>登陆/注册</h2>
+						<p>Login / register</p>
+					</a>
+				</li>
+			 <else/>
+				 <div class="us_info">
+					<span class="file_point"><img alt="" src="/public/index/img/message.png" height="100%"></span>
+					<span class="hd_pic">
+						<img alt="" src="{{$userone.userhead}}">
+					<ul class="itme_li">
+						<li><a href="{{:url('my/index')}}">个人资料</a></li>
+						<li><a href="{{:url('account/index')}}">个人中心</a></li>
+						<li id="logout"><a href="{{:url('reg/logout')}}">退出登录</a></li>
+					</ul>
+					</span>
+					<span class="file_up"><a href="{{:url('my/pub')}}">上传作品</a></span>
+				</div>
+			<ul class="hd_nav">
+		
+
+			 </empty>	
+				<li>
+					<a href="{{:url('forum/interlocution')}}">
+						<h2>问答</h2>
+						<p>interlocution</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{:url('account/lists')}}">
+						<h2>文章</h2>
+						<p>article</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{:url('forum/index')}}">
+						<h2>社区</h2>
+						<p>community</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{:url('index/index')}}">
+						<h2>首页</h2>
+						<p>INDEX</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+
+
+<div>
+	<block name="bbscontent"></block>
+</div>
+
+
+<footer>
+		<div class="w1200 fot_cont">
+			<img src="/public/index/img/logo.png" alt="" class="fot_video">
+			<ul class="fot_nav">
+				<li><a href="javascript:;">首页</a>|<a href="javascript:;">制作人</a>|<a href="javascript:;">制片人</a>|<a href="javascript:;">制作公司</a>
+				</li>
+			</ul>
+			
+		</div>
+</footer>
+
+
+</body>
+<!--<script src="__PC__/jquery.min.js" charset="utf-8"></script>-->
+<script src="__PC__/layui.js" charset="utf-8"></script>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+</html>
+<eq name="nav" value="index">
+<script>
+	var myimage = document.getElementById("myimage");
+	var rw = myimage.naturalWidth;	
+    var rh = myimage.naturalHeight;
+    
+    if(typeof myimage.naturalWidth == "undefined"){
+		rw=1960;
+		rh=600;
+	}
+    if(rh<385){
+    	rh=385;
+    }
+	var w=document.body.scrollWidth;
+	var bh=w*rh/rw;
+//	bh=parseInt(bh);
+	// console.log(w);
+layui.use(['carousel', 'form'], function(){
+  var carousel = layui.carousel
+  ,form = layui.form;
+  //图片轮播
+  carousel.render({
+    elem: '#indexlunbo'
+    ,width: '100%'
+    ,height: bh
+    ,interval: 3000
+  }); 
+
+  var $ = layui.$, active = {
+    set: function(othis){
+      var THIS = 'layui-bg-normal'
+      ,key = othis.data('key')
+      ,options = {};
+      
+      othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
+      options[key] = othis.data('value');
+      ins3.reload(options);
+    }
+  };
+
+  form.on('switch(autoplay)', function(){
+    ins3.reload({
+      autoplay: this.checked
+    });
+  });
+
+});
+
+</script>
+</eq>
+<script>
+layui.use(['form', 'layedit', 'laydate'], function(){
+	var layer = layui.layer
+	$('.logout').click(function(){
+		loading = layer.load(2, {
+		    shade: [0.2,'#000'] //0.2透明度的白色背景
+		});
+		
+		var locationurl="{{:url('reg/login')}}";
+	    $.getJSON("{{:url('reg/logout')}}",function(data){
+	      if(data.code == 200){
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	        	 location.href = locationurl;
+	        });
+	      }else{
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	})
+})
+</script>
+<script>
+layui.use('upload', function(){
+  var $ = layui.jquery
+  ,upload = layui.upload
+  ,layer = layui.layer;
+  
+  //普通图片上传
+  var uploadInst = upload.render({
+    elem: '#uploadcon'
+    ,url: '{{:url("account/upload")}}'
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#uploadcon').attr('src', result); //图片链接（base64）
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if(res.code==200){
+      	$('#uploadcon img').attr('src',res.headpath);
+      	$('.upfilepath').val(res.headpath);
+      	return layer.msg('上传成功', {icon: 1, anim: 6, time: 1000});
+      }
+      if(res.code > 0){
+        return layer.msg('上传失败');
+      }
+      //上传成功
+    }
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+  });
+  
+});
+</script>
+<script>
+	var um = UM.getEditor('myEditor');
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,jq=layui.jquery
+  ,laydate = layui.laydate; 
+ 
+  form.verify({
+  	path:function(value){
+  		if(value.length < 1){
+        return '请上传封面图！';
+      }
+  	},
+    title: function(value){
+      if(value.length < 5){
+        return '标题至少得5个字符啊';
+      }
+    },content: function(value){
+      if(value.length < 1){
+        return '内容不能为空';
+      }
+    },comments:function(value){
+    	if(value.length < 1){
+	        return '内容不能为空';
+	      }
+    },commentfilm:function(value){
+    	if(value.length < 1){
+	        return '内容不能为空';
+	      }
+    }
+  });
+  form.on('submit(content_sub)', function(data){
+  	
+    var param=data.field;
+    loading = layer.load(2, {
+	    shade: [0.2,'#000'] //0.2透明度的白色背景
+	  });
+    jq.post("{{:url('account/publish')}}",param,function(data){
+	    	
+	      if(data.code == 200){
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	          location.href = '{{:url("account/content")}}';
+	        });
+	      }else{
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+    return false;
+  });
+  form.on('submit(comment_sub)', function(data){
+  	
+    var param=data.field;
+    loading = layer.load(2, {
+	    shade: [0.2,'#000'] //0.2透明度的白色背景
+	  });
+    jq.post("{{:url('account/detail')}}",param,function(data){
+	    	
+	      if(data.code == 200){
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	          location.reload();
+	        });
+	      }else{
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+    return false;
+  });
+  
+  /*评论作品*/
+ form.on('submit(comment_film)', function(data){
+  
+    var param=data.field;
+    // console.log(param)
+    loading = layer.load(2, {
+	    shade: [0.2,'#000'] //0.2透明度的白色背景
+	  });
+    jq.post("{{:url('forum/filmcomment')}}",param,function(data){
+	    	
+	      if(data.code == 200){
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	          location.reload();
+	        });
+	      }else{
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+    return false;
+  });
+   form.on('submit(dy_sub)', function(data){
+  	
+    var param=data.field;
+    loading = layer.load(2, {
+	    shade: [0.2,'#000'] //0.2透明度的白色背景
+	  });
+    jq.post("{{:url('account/dy')}}",param,function(data){
+	    	// console.log(data);
+	      if(data.code == 200){
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	          location.href = '{{:url("account/loc")}}';
+	        });
+	      }else{
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+    return false;
+  });
+  
+});
+</script>
+<script>
+	$('.recommentfilm').click(function(){
+		var tid=$(this).attr('data');
+		var mid=$('.mid').val();		
+		layer.prompt({title: '评论回复', formType: 2}, function(text, index){
+	    layer.close(index);
+	    if(!text){
+	    	layer.msg('请输入评论内容！', {icon: 2, anim: 6, time: 1000});
+	    }
+	    var param={tid:tid,comments:text,mid:mid,cid:0};
+	    $.post("{{:url('forum/detail')}}",param,function(data){
+	      if(data.code == 200){
+	        
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	        	 location.reload();
+	        });
+	      }else{
+	        
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	    
+	  });
+	});
+	
+	
+	$('.recomment').click(function(){
+		var tid=$(this).attr('data');
+		var cid=$('.cid').val();
+		layer.prompt({title: '评论回复', formType: 2}, function(text, index){
+	    layer.close(index);
+	    if(!text){
+	    	layer.msg('请输入评论内容！', {icon: 2, anim: 6, time: 1000});
+	    }
+	    var param={tid:tid,comments:text,cid:cid,mid:0};
+	    $.post("{{:url('account/detail')}}",param,function(data){
+	      if(data.code == 200){
+	        
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	        	 location.reload();
+	        });
+	      }else{
+	        
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	    
+	  });
+	});
+	$('.dopraise').click(function(){
+		var id=$(this).attr('data');			
+	    var param={id:id};
+	    $.post("{{:url('account/dopraise')}}",param,function(data){
+	      if(data.code == 200){	        
+	        layer.msg('点赞成功', {icon: 1, time: 1000}, function(){
+	        	 location.reload();
+	        });
+	      }else{
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	});
+	$('.lovecontent').click(function(){
+		var id=$(this).attr('data');			
+	    var param={id:id};
+	    $.post("{{:url('account/lovecontent')}}",param,function(data){
+	      if(data.code == 200){	        
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	        	 location.reload();
+	        });
+	      }else{
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	});
+	$('#filmlovebtn').click(function(){
+		var id=$(this).attr('data');			
+	    var param={id:id};
+	    $.post("{{:url('account/lovefilm')}}",param,function(data){
+	      if(data.code == 200){	        
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	        	 location.reload();
+	        });
+	      }else{
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	});
+	$('.commentslist').click(function(){
+		var id=$(this).attr('data');			
+	    var param={id:id};
+	    var url="{{:url('account/comlists')}}?id="+id;
+	    layer.open({
+	      type: 2,
+	      title: '评论列表',
+	      shadeClose: true,
+	      shade: false,
+	      maxmin: true, 
+	      area: ['893px', '600px'],
+	      content: url
+	    });
+	});
+	
+	$('.commentsfilm').click(function(){
+		var id=$(this).attr('data');			
+	    var param={id:id};
+	    var url="{{:url('account/filmlists')}}?id="+id;
+	    layer.open({
+	      type: 2,
+	      title: '评论列表',
+	      shadeClose: true,
+	      shade: false,
+	      maxmin: true, 
+	      area: ['893px', '600px'],
+	      content: url
+	    });
+	});
+	
+	$('.nologin').click(function(){
+		layer.confirm('你没有登录，请先去登录', {
+		  btn: ['去登录','取消'] //按钮
+		}, function(){
+		    window.location.href="{{:url('reg/login')}}";
+		}, function(){
+		  
+		});
+	});
+
+	$('.watch').click(function(){
+		var user=$(this).attr('data-user');
+		var userd=$(this).attr('data-userd');
+		$.post("{{:url('account/connect')}}",{user:user,userd:userd},function(data){
+			if(data.code==200){
+				layer.msg(data.msg, {icon: 1, anim: 6, time: 1000});return;
+			}else{
+				layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});return;
+			}
+		})
+	});
+
+	$('.connect').click(function(){
+		var user=$(this).attr('data-user');
+		var userd=$(this).attr('data-userd');
+		$.post("{{:url('account/connect')}}",{user:user,userd:userd},function(data){
+			if(data.code==200){
+				layer.msg(data.msg, {icon: 1, anim: 6, time: 1000});return;
+			}else{
+				layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});return;
+			}
+		})
+	});
+</script>
+<!--文章加载更多-->
+<script>
+	var page=1;
+	$('#lists_more').click(function(){
+		$.ajax({
+			type: 'POST',
+			url: '{{:url("account/listsmore")}}',
+			data:{page:page},
+			dataType: 'json',
+			success: function(msg){	
+				if(msg.code==0){
+					layer.msg(msg.msg, {icon: 1, anim: 6, time: 1000});return;
+				}
+				if(msg){					
+					var str='';
+					var attr='';
+					if(page%2==0){
+					for(var i=0;i<msg.length;i++){
+						if(i%2==1){
+						str+='<li  class="user_con_main_li " style="width:1200px;height:402px;"><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div></li>'	;
+						}else{
+						str+='<li  class="user_con_main_li " style="width:1200px;height:402px;"><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div></li>';
+						}
+					}	
+					}else{
+					for(var i=0;i<msg.length;i++){
+						if(i%2==0){
+						str+='<li  class="user_con_main_li " style="width:1200px;height:402px;"><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div></li>'	;
+						}else{
+						str+='<li  class="user_con_main_li " style="width:1200px;height:402px;"><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div></li>';
+						}
+					}}
+					page=page+1;
+					$("#content_ul").append(str);
+				}else{			
+	                layer.msg('没有了', {icon: 1, anim: 6, time: 1000});
+				}
+			},
+			error:function(msg) {
+			}
+		});
+	});	
+</script>
+<!--最新注册用户加载更多-->
+<script>
+	var page=1;
+	$('#reg_more').click(function(){
+
+		$.ajax({
+			type: 'POST',
+			url: '{{:url("account/regmore")}}',
+			data:{page:page},
+			dataType: 'json',
+			success: function(msg){	
+				// console.log(msg)
+				if(msg.code==0){
+					layer.msg(msg.msg, {icon: 1, anim: 6, time: 1000});return;
+				}
+				if(msg){					
+					var str='';
+					var attr='';
+					for(var i=0;i<msg.length;i++){
+						str+='<li class="index_main_right_main_li"><div class="index_main_right_main_li_img"><img src="'+msg[i].userhead+'" /></div><div class="index_main_right_main_li_r"><div class="index_main_right_main_li_r_1">'+msg[i].username+'</div><div class="index_main_right_main_li_r_3">'+msg[i].hangye+'</div></div></li>'
+					}
+
+					
+					// if(page%2==0){
+					// for(var i=0;i<msg.length;i++){
+					// 	if(i%2==1){
+					// 	str+='<li  class="user_con_main_li clear" style="width:1200px;height:402px;"><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div></li>'	;
+					// 	}else{
+					// 	str+='<li  class="user_con_main_li clear" style="width:1200px;height:402px;"><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div></li>';
+					// 	}
+					// }	
+					// }else{
+					// for(var i=0;i<msg.length;i++){
+					// 	if(i%2==0){
+					// 	str+='<li  class="user_con_main_li clear" style="width:1200px;height:402px;"><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div></li>'	;
+					// 	}else{
+					// 	str+='<li  class="user_con_main_li clear" style="width:1200px;height:402px;"><div class="user_con_main_right fl" style="position: relative;width:510px;height:402px;"><h2>'+msg[i]['title']+'</h2><p>'+msg[i]['content']+'</p><div class="account_lists_read"><a href="{{:url("account/detail")}}?id='+msg[i]['id']+'" style="display: block;color: #fdde96;">阅读全文</a></div></div><div class="con_img fl" style="width:595px;height:402px;"><img src="<empty name="vo.thumb">__PC__/images/a1.jpg<else/>'+msg[i]['thumb']+'</empty>" style="width:595px;height:402px;"/></div></li>';
+					// 	}
+					// }}
+					page=page+1;
+					$(".index_main_right_main").append(str);
+				}else{			
+	                layer.msg('没有了', {icon: 1, anim: 6, time: 1000});
+				}
+			},
+			error:function(msg) {
+			}
+		});
+	});	
+</script>
+<script>
+layui.use(['form', 'layedit', 'laydate'], function(){
+	var layer = layui.layer
+	$('.logout').click(function(){
+		loading = layer.load(2, {
+		    shade: [0.2,'#000'] //0.2透明度的白色背景
+		});
+		
+		var locationurl="{{:url('reg/login')}}";
+	    $.getJSON("{{:url('reg/logout')}}",function(data){
+	      if(data.code == 200){
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 1, time: 1000}, function(){
+	        	 location.href = locationurl;
+	        });
+	      }else{
+	        layer.close(loading);
+	        layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+	      }
+	    });
+	})
+})
+</script>

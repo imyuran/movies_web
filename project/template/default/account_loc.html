@@ -1,0 +1,78 @@
+<extend name="account_common" />
+<block name="usercontent">	
+	<div class="w1200">
+		<div class="user_con_pl">
+			<div class="user_loc_pl_left"><img src="__PC__/images/loc.png"/></div>
+			<!-- 点击跳转发布动态 -->
+			<div class="user_con_pl_right"><a href="<empty name='Think.session.email'>{{:url('reg/login')}}<else/>{{:url('account/dy')}}</empty>" style="display: block;color:#fff;">发布动态</a></div>
+		</div>
+		<div class="user_loc">			
+			<div class="user_loc_left fl">
+				<volist name='list' id='aa'>
+				<div class="user_loc_left_1">
+					<div class="user_loc_left_1_img fl">
+						<img src="{{$aa.userhead}}" />
+						<div>
+							<div style="color:#898686;font-size: 10px;margin-top: 15px;">{{$aa.time|date="Y-m-d H:i:s",###}}</div>
+						</div>						
+					</div>
+					<div class="user_loc_left_1_con fl">
+						<div class="user_loc_left_1_con_top">
+							<h4>{{$aa.username}}</h4>在{{$aa.title}}中发表了 {{$aa.content}}</div>
+						<div class="user_loc_left_1_con_middle">
+							<img src="{{$aa.thumb}}" />
+						</div>
+						<div class="user_loc_left_1_con_bottom">
+							<span>评论</span>&nbsp;<span>200</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span>赞</span>&nbsp;<span>(20)</span>
+						</div>
+					</div>
+				</div>
+			</volist>
+			
+			</div>
+
+			<div class="user_loc_right fl">
+			    <div class="user_loc_right_1">
+			    	<span class="loc_active" ><a href="{{:url('account/loc')}}?types=who">谁看过我</span></a>&nbsp;|&nbsp;
+			    	<a href="{{:url('account/loc')}}?types=me"><span >我看过谁</span></a>
+			    </div>
+			    <div class="user_loc_right_2">
+			<?php if($types =='who'){?>
+			    	<ul class="user_loc_right_2_ul">
+			    	<foreach name="visited" item="v">
+			    		<li class="user_loc_right_2_li">
+			    			<span><img src="{{$v.userhead}}"/></span>
+			    			<span style="margin-left: 15px;display: inline-block;width: 135px;">{{$v.username}}</span>
+			    			<span class="user_loc_right_2_li_date">{{$v.created_at}}</span>
+			    		</li>
+			    		<li class="user_loc_right_2_li">
+			    	</foreach>	
+			    	</ul>
+			    	<div class="user_loc_right_2_more">查看更多</div>
+			<?php }else{ ?>
+		
+			    	<ul class="user_loc_right_2_ul">
+			    		
+			    		<foreach name="visiter" item="v">
+			    		<li class="user_loc_right_2_li">
+			    			<span><img src="{{$v.userhead}}"/></span>
+			    			<span style="margin-left: 15px;display: inline-block;width: 135px;">{{$v.username}}</span>
+			    			<span class="user_loc_right_2_li_date">{{$v.created_at}}</span>
+			    		</li>
+			    		<li class="user_loc_right_2_li">
+			    	</foreach>	
+			    	</ul>
+			    	<div class="user_loc_right_2_more">查看更多</div>
+			<?php } ?>    		
+			    	
+		  	
+			    </div>
+		    </div>
+		</div>
+		<div class="user_loc_more">
+			<!-- <span class="loc_active_page">1</span><span>2</span><span>3</span><span>></span> -->
+			{{$list->render()}}
+		</div>
+	</div>
+	
+</block>

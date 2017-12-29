@@ -1,0 +1,258 @@
+.c_banner{
+	width: 100%;
+	height: 516px;
+	background-image: url(../../img/interlocution/c_banner.jpg);
+	background-position: center center;
+}
+.c_que_ans .ca_head{
+	width: 145px;
+	text-align: center;
+	padding-top: 52px;
+	padding-bottom: 100px;
+}
+.c_que_ans .ca_head h2{
+	font-size: 18px;
+	color: #28173a;
+	line-height: 20px;
+}
+.c_que_ans .ca_head i{
+	display: block;
+	height: 1px;
+	background-color: #ffbc22;
+	width: 32px;
+	margin: 12px auto;
+}
+.c_que_ans .ca_head p{
+	font-size: 18px;
+	color: #c6c6c6;
+}
+/*.c_que_ans .go_Tucao{
+	position: absolute;
+	bottom: 24px;
+	right: 0;
+	font-size: 16px;
+	color: #fff;
+	height: 36px;
+	line-height: 36px;
+	width: 88px;
+	text-align: center;
+	padding-left:0 16px;
+	background-color: #ffbc22;
+}*/
+/*.c_que_ans .c_big_pic{
+	float: left;
+	width: 470px;
+	height: 682px;
+}
+.c_que_ans .c_big_pic img{ width:100%;height: 100%;}*/
+.c_que_ans .c_q_item{
+	width: 590px;
+	float: left;
+}
+.c_que_ans .c_q_item:last-child{ float: right;}
+.c_que_ans .c_inf_right{
+	/*float: right;*/
+	width: 100%;
+}
+.c_u_hd{
+	position: relative;
+	padding-top: 34px;
+	width: 100%;
+	padding-left: 88px;
+}
+.c_u_hd > img{
+	position: absolute;
+	top: 6px;
+	left: 0;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+.c_u_hd .c_u_name{
+	font-size: 14px;
+	color: #4c4e5b;	
+}
+.c_u_hd .c_u_subNme{
+	font-size: 14px;
+	color: #c4c4c4;
+	margin-top: 4px;
+}
+.c_inf_right .c_issue{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 86px;
+	height: 34px;
+	text-align: center;
+	line-height: 34px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #FFBC22;
+}
+.c_u_hd >h2{
+	font-size: 24px;
+	color: #3b3737;
+	height: 114px;
+	padding-top: 30px;
+}
+.c_inf_right .tit{
+	font-size: 16px;
+	color: #18181b;
+}
+.c_inf_right .tit .more{
+	font-size: 14px;
+	float: right;
+	color: #8b8b8b;
+}
+.c_answer_li{
+	border: 1px solid #E1E1E1;
+	margin-top: 20px;
+	height: 452px;
+}
+.c_answer_li .c_u_hd{
+	position: relative;
+	margin-top: 22px;
+}
+.c_answer_li .c_u_hd .follow{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 36px;
+	width: 70px;
+	text-align: center;
+	line-height: 36px;
+	border:1px solid #ffbc22;
+	color: #ffbc22;
+	font-size: 16px;
+}
+.c_answer_li .c_inf{
+	padding-left: 88px;
+	margin-top: 32px;
+	font-size: 14px;
+	color: #98989e;
+	line-height: 28px;
+}/*
+.c_topline .follow{
+	position: absolute;
+	top: 35px;
+	right: 0;
+	height: 36px;
+	width: 70px;
+	text-align: center;
+	line-height: 36px;
+	border:1px solid #ffbc22;
+	color: #ffbc22;
+	font-size: 16px;
+	
+}
+.c_topline > img{
+	float: left;
+	width: 197px;
+	height: 229px;
+}
+.c_topline .info{
+	float: left;
+	position: relative;
+	padding-left: 44px;
+	width: 1002px;
+	border:1px solid #e1e1e1;
+}
+.c_topline .info >h2{
+	font-size: 18px;
+	color: #484848;
+	margin-top: 16px;
+}
+.c_topline .sub_tit{
+	font-size: 14px;
+	color: #c4c4c4;
+	margin-top: 16px;
+}
+.c_topline .c_cont{
+	float: left;
+	width: 898px;
+}
+.c_topline .c_cont h3{
+	font-size: 18px;
+	color: #484848;
+	margin-top: 24px;
+}
+.c_topline .c_cont p{
+	padding-top: 20px;
+	height: 104px;
+	font-size: 14px;
+	color: #a5a5a5;
+	line-height: 26px;
+	letter-spacing: 1px;
+}*/
+.c_que_ans .pro_li{
+	margin-top: 96px;
+}
+.c_que_ans .pro_li li{
+	float: left;
+	position: relative;
+	padding-left: 216px;
+	padding-right: 40px;
+	width:585px ;
+	height: 229px;
+	margin-bottom: 72px;
+}
+.c_que_ans .pro_li li:nth-child(2n+1){
+	margin-right: 20px;
+}
+.c_que_ans .pro_li li:hover{
+	box-shadow: 0 6px 20px #ccc;
+}
+.c_que_ans .pro_li li >img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 197px;
+	height: 229px;
+}
+.c_que_ans .pro_li li .txt{
+	height: 158px;
+	line-height: 50px;
+	color: #9f9f9f;
+	font-size: 14px;
+}
+.c_que_ans .pro_li li:hover .txt{ color: #242424; }
+.c_que_ans .pro_li li .u_name{
+	font-size: 16px;
+	color: #1e2126;
+}
+.c_que_ans .pro_li li:hover .u_name{
+	color: #ffbc22;
+}
+.c_que_ans .pro_li li .u_info{
+	font-size: 12px;
+	color: #999898;
+	margin-top: 3px;
+}
+.c_que_ans .pro_li li .u_info span{
+	padding:0 4px;
+}
+.c_que_ans .pro_li li .u_info span:first-child{ margin-right: 10px;}
+.c_que_ans .pro_li li .triangle{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: inline-block;
+	border-left: 15px solid transparent;
+	border-top: 15px solid transparent;
+	border-right: 15px solid #ffbc22;
+	border-bottom: 15px solid #ffbc22;
+}
+.return_top{
+	position: fixed;
+	z-index: 100;
+	width: 106px;
+	text-align: center;
+	bottom: 40px;
+	right: 60px;
+}
+.return_top > p{
+	font-size: 14px;
+	color: #a7a7a7;
+	line-height: 20px;
+	margin-top: 20px;
+}

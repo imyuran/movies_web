@@ -1,0 +1,30 @@
+<extend name="elses_common" />
+<block name="usercontent">
+	<div class="w1200">
+		<div class="user_con_pl">
+			<div class="user_con_pl_left"><span class="user_con_pl_left_title">文章</span><span style="font-size: 12px;margin-left: 10px;">ARTICLE</span></div>
+			
+		</div>
+		<ul class="user_con_main" id="content_ul">
+
+			<foreach name="cval" item="c_val">
+			<li  class="user_con_main_li ">
+				<div class="con_img fl">
+					<img src="{{$c_val.thumb}}" />
+				</div>
+				<a href="{{:url('forum/detail')}}?id={{$c_val.id}}" style="color:#a3a5a8;">
+					<div class="user_con_main_right fl" style="position: relative;">
+						<h2>{{$c_val.title}}</h2>
+						<div>{{$c_val.content|htmlspecialchars_decode|strip_tags|mb_substr=0,200,'utf-8'}}</div>
+						
+					</div>
+				</a>
+			</li>
+			</foreach>
+			
+		</ul>
+		<div class="user_con_more">
+			<div style="cursor: pointer;" id="content_more">加载更多</div>
+		</div>
+	</div>
+</block>

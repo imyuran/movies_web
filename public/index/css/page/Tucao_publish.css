@@ -1,0 +1,106 @@
+
+.int_pub_hd{
+	background-color: #fff;
+}
+.int_top{
+	height: 84px;
+}
+.int_top .tit h2{
+	font-size: 24px;
+	color: #1e2126;
+	margin-top: 18px;
+}
+.int_top .tit p{
+	font-size: 14px;
+	color: #c6c6c6;
+	margin-top: 2px;
+}
+.int_top .int_btn{
+	height: 43px;
+	width: 102px;
+	line-height: 43px;
+	text-align: center;
+	border-radius: 5px;
+	background-color: #ffbc22;
+	color: #fff;
+	font-size: 12px;
+	margin-top: 20px;
+}
+/*发布内容输入*/
+.publish_in{
+	background-color: #fff;
+	padding-top: 60px;
+	margin-top: 18px;
+	margin-bottom: 100px;
+	padding-bottom: 150px;
+}
+.publish_file{
+	position: relative;
+	width: 928px;
+	height: 318px;
+	margin: 0 auto;
+	background-color: #f6f6f6;
+}
+.publish_file .pic_list li{
+	float: left;
+	width: 120px;
+	height:150px;
+	margin: 0 20px 18px 0;
+	text-align: center;
+	line-height: 150px;
+}
+.publish_file .pic_list li img{
+	max-width: 100%;
+	max-height: 100%;
+	
+}
+.publish_file .upload_btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 61px;
+	height: 42px;
+	cursor: pointer;
+}
+.publish_file .upload_btn .fileUpload{
+	position: absolute;
+	z-index: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+.publish_in > h2{
+	height: 88px;
+	line-height: 88px;
+	padding: 0 136px;
+	font-size: 30px;
+	color: #adadad;
+	border-bottom: 1px solid #e1e1e1;
+}
+.publish_in > h2 input{
+	width: 600px;
+}
+.publish_in .pub_cont{
+	border:1px solid #e1e1e1;
+	margin: 60px auto 0 auto;
+	width: 928px;
+	height: 300px;
+	padding: 0 20px;
+}
+.publish_in .pub_cont .option_head{
+	height: 36px;
+	line-height: 36px;
+}
+.publish_in .pub_cont .option_head span{
+	cursor: pointer;
+	margin-right: 4px;
+}
+.publish_in .pub_cont textarea{
+	width: 100%; 
+	height: 248px; 
+	border:none;
+	font-size: 16px;
+}

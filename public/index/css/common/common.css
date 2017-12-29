@@ -1,0 +1,8 @@
+.w1200{
+	width: 1200px;
+	margin: 0 auto;
+}
+body{
+	background-color: #efeef0;
+	min-width: 1200px;
+}

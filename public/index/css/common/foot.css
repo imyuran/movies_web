@@ -1,0 +1,36 @@
+footer{
+	background-color: #151519;
+}
+.fot_cont{
+	position: relative;
+	height: 214px;
+}
+.fot_video{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+.fot_nav{
+	padding-top: 90px;
+	text-align: center;
+}
+.fot_nav li{
+	display: inline-block;
+	font-size: 24px;
+	color: #42424b;
+}
+.fot_nav li a{ 
+	color: #42424b;
+	margin: 0 10px;
+}
+.icon_li{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 30px;
+	margin: auto;
+}
+.icon_li img{ margin-left: 20px; }

@@ -1,0 +1,111 @@
+<extend name="forum_common" />
+<block name="bbscontent">
+
+    <!--主题-->
+    <section class="int_pub_hd">
+        <div class="int_top">
+            <div class="w1200">
+                <div class="fl tit">
+                    <h2>神吐槽</h2>
+                    <p>Ask and answer</p>
+                </div>
+                <form method="post" action="{{:url('forum/check')}}" enctype="multipart/form-data">
+                    <input type="submit" onclick="uploadInfo()" class="fr int_btn" value="发布">
+                    <input type="hidden" name="userid" value="{{$userid}}">
+            </div>
+        </div>
+    </section>
+    <!--发布内容输入-->
+    <section class="w1200 publish_in">
+        <div class="publish_file">
+            <div class="publish_file">
+                <div class="upload_btn" id="upduct"><img alt="" src="/public/index/img/camera.png"></div>
+                <style type="text/css">
+                    .publish_file > img {
+                        display: block;
+                        margin:0 auto;
+                        height:100%;
+                    }
+                </style>
+            </div>
+
+
+        </div>
+        <h2><input type="text" placeholder="请输入标题......" name="title"></h2>
+        <div class="pub_cont" id="editor" style="border:none">
+
+            <p>"请输入正文......"</p>
+        </div>
+       <!-- <input type="button" value="submit" onclick="uploadInfo()">-->
+    </section>
+    </form>
+
+    <!--底部-->
+
+    <script>
+        var E = window.wangEditor
+        var editor = new E('#editor')
+        // 或者 var editor = new E( document.getElementById('editor') )
+        editor.create()
+
+
+        layui.use('upload', function(){
+            var $ = layui.jquery
+                ,upload = layui.upload
+                ,layer = layui.layer;
+
+            //普通图片上传
+            var uploadInst = upload.render({
+                elem: '#upduct'
+                ,url: '{{:url("account/upload")}}'
+
+                ,before: function(obj) {
+                    $( '#upduct').css('display','none');
+                    //预读本地文件示例，不支持ie8
+
+                    obj.preview(function (index, file, result) {
+                        $('.publish_file > .publish_file').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                    });
+                }
+                ,done: function(res){
+                    //如果上传失败
+                    if(res.code==200){
+                        $('.upload_btn img').attr('src', res.headpath);
+                        $('#fengmian').val(res.headpath);
+                        return layer.msg('上传成功', {icon: 1, anim: 6, time: 1000});
+                    }
+                    if(res.code > 0){
+                        return layer.msg('上传失败');
+                    }
+                    //上传成功
+                }
+                ,error: function(){
+                    //演示失败状态，并实现重传
+                    var demoText = $('#demoText');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function(){
+                        uploadInst.upload();
+                    });
+                }
+            });
+
+        });
+
+        function uploadInfo(){
+            $.ajax({
+                url:'putInformation',
+                data:{id:"12"},
+                dataType:'json',
+                type:'POST',
+                success:function(data){
+                    if(data.code == 200){
+                        //layer.success();
+                        console.log(data.msg);
+                    }else{
+                        //layer.
+                    }
+                }
+            });
+        }
+    </script>
+</block>

@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/base.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/foot.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/header.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/page/index.css">
+	<link rel="stylesheet" type="text/css" href="/public/index/css/common/swiper-3.4.2.min.css">
+	<script src="/public/index/js/jquery-3.2.1.min.js"></script>
+	<script src="/public/index/js/swiper-3.4.2.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="w1200 head_cont">
+			<img src="/public/index/img/logo.png">
+			<empty name="Think.session.phone">
+			<ul class="hd_nav">
+				<li>
+					<a href="{{:url('reg/login')}}">
+						<h2>登陆/注册</h2>
+						<p>Login / register</p>
+					</a>
+				</li>
+			<else/>
+				<div class="us_info">
+					<span class="file_point"><img alt="" src="/public/index/img/message.png" height="100%"></span>
+					<span class="hd_pic">
+					<img alt="" src="{{$res.userhead}}">
+					<ul class="itme_li">
+						<li><a href="{{:url('my/index')}}">个人资料</a></li>
+						<li><a href="{{:url('account/index')}}">个人中心</a></li>
+						<li><a href="{{:url('reg/logout')}}">退出登录</a></li>
+					</ul>
+				</span>
+					<span class="file_up"><a href="{{:url('my/pub')}}">上传作品</a></span>
+				</div>
+				<ul class="hd_nav">
+			</empty>		
+				<li>
+					<a href="{{:url('interlocution/index')}}">
+						<h2>问答</h2>
+						<p>interlocution</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{:url('account/lists')}}">
+						<h2>文章</h2>
+						<p>article</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{:url('forum/index')}}">
+						<h2>社区</h2>
+						<p>community</p>
+					</a>
+				</li>
+				<li class="active">
+					<a href="{{:url('index/index')}}">
+						<h2>首页</h2>
+						<p>INDEX</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<!--banner-->
+	<section class="index_banner">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="ban_cont">
+						<img src="/public/index/img/banner_1.png">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="ban_cont">
+						<img src="/public/index/img/banner_1.png">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="ban_cont">
+						<img src="/public/index/img/banner_1.png">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination">
+				
+			</div>
+		</div>
+		<div class="w1200 ban_content">
+			<img class="ban_w" src="/public/index/img/chian.png" alt="">
+			<div class="ban_search"><input type="text" name=""><img alt="" src="/public/index/img/search.png"></div>
+		</div>
+	</section>
+	<!--技术交流-->
+	<section class="teac_bk">
+		<div class="w1200 clearfix">
+			<!--技术交流-->
+			<div class="fl t_c">
+				<div class="teac_exc">
+					<div class="hd_tit bod_r">
+						<h2>技术交流</h2>
+						<p>technical exchange</p>
+					</div>
+					<div class="hd_tit">
+						<h2>课程</h2>
+						<p>course</p>
+					</div>
+					<i class="line_l"></i>
+					<a href="javascript:;" class="more">MORE>></a>
+				</div>
+				<ul class="t_cont">
+					<li class="clearfix">
+						<img src="/public/index/img/pro_img_1.jpg" class="t_pic">
+						<div class="t_info">
+							<h3>10分钟教你玩转单反</h3>
+							<ul>
+								<li><a href="javascript:;">觉得单反很难吗？</a></li>
+								<li><a href="javascript:;">不知从何下手吗？</a></li>
+								<li><a href="javascript:;">是否傻瓜相机伴随了你很久呢？</a></li>
+							</ul>
+							<a href="javascript:;" class="base_video">基础视频教程</a>
+						</div>
+					</li>
+					<li class="clearfix">
+						<img src="/public/index/img/pro_img_2.jpg" class="t_pic">
+						<div class="t_info">
+							<h3>电影工业级调光教程</h3>
+							<ul>
+								<li><a href="javascript:;">技术篇-这里有所有你需要了解的编码常识 </a></li>
+								<li><a href="javascript:;">技术篇-前期准备与项目流程 </a></li>
+								<li><a href="javascript:;">艺术篇-一级调光 </a></li>
+								<li><a href="javascript:;">......</a></li>
+							</ul>
+							<a href="javascript:;" class="base_video">基础视频教程</a>
+						</div>
+					</li>
+					<li class="clearfix">
+						<img src="/public/index/img/pro_img_3.jpg" class="t_pic">
+						<div class="t_info">
+							<h3>电影工业级调光教程</h3>
+							<ul>
+								<li><a href="javascript:;">技术篇-这里有所有你需要了解的编码常识 </a></li>
+								<li><a href="javascript:;">技术篇-前期准备与项目流程 </a></li>
+								<li><a href="javascript:;">艺术篇-一级调光 </a></li>
+								<li><a href="javascript:;">...... </a></li>
+							</ul>
+							<a href="javascript:;" class="base_video">基础视频教程</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--最新注册-->
+			<div class="fr n_login">
+				<div class="teac_exc">
+					<div class="hd_tit">
+						<h2>最新注册</h2>
+						<p>The latest registration</p>
+					</div>
+					<i class="line_l"></i>
+					<a href="javascript:;" class="more">MORE>></a>
+				</div>
+				<ul class="user_show">
+
+				<foreach name="datas" item="val" key="k">
+						<li>
+							<a href ="{{:url('elses/index')}}?id={{$val.id}}"><img src="{{$val.userhead}}"></a>
+							<a href ="{{:url('elses/index')}}?id={{$val.id}}"><h2>{{$val.username}}</h2></a>
+
+							<p class="u_work">
+								<foreach name="val.teachs" item="cvl" key="kk">
+								<span><if condition="$kk gt 0">|</if> {{$cvl}}</span>
+								</foreach>
+							</p>
+
+							<p class="u_writ">代表作：《Shine with you中国移动宣传片》</p>
+							<P class="u_pro">《佳音》微电影</P>
+							<p class="u_pro">粉丝：n人</p>
+							<p class="u_pro">关注 ：m人</p>
+						</li>
+						
+					</foreach>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!--广告栏-->
+	<section class="adv">
+		<div class="w1200">
+			<div class="adv_hd">
+				<h2>公告栏</h2>
+				<i class="line"></i>
+				<h3>NOTICE BOARD</h3>
+			</div>
+			<ul class="adv_li">
+				<li class="active">
+					<img src="/public/index/img/adv_1.jpg" class="pro_img">
+					<p class="pro_info">
+						video是国内最大的影视创作人社区，汇聚众多优秀创作人，提供作品展示、项目交流、拍摄制作机会等影视行业服务。
+					</p><i class="visi"></i>
+					<a href="javascript:;"><span>2017-9-28</span> 发布</a>
+				</li>
+				<li>
+					<img src="/public/index/img/adv_2.jpg" class="pro_img">
+					<p class="pro_info">
+						video影业是以制作、投资、发行、营销、艺人经纪业务为主的影视娱乐公司，主要出品和发行网络剧、网络电影、院线电影等内容；
+					</p><i class="visi"></i>
+					<a href="javascript:;"><span>2017-9-28</span> 发布</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!--底部-->
+	<footer>
+		<div class="w1200 fot_cont">
+			<img src="/public/index/img/logo.png" alt="" class="fot_video">
+			<ul class="fot_nav">
+				<li><a href="javascript:;">首页</a>|<a href="javascript:;">制作人</a>|<a href="javascript:;">制片人</a>|<a href="javascript:;">制作公司</a>
+				</li>
+			</ul>
+			
+		</div>
+</footer>
+
+	<script type="text/javascript" src="/public/index/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/public/index/js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 5000,//可选选项，自动滑动
+				pagination : '.swiper-pagination',
+				loop: true
+			})
+		})
+	</script>
+</body>
+</html>
